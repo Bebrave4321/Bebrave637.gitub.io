@@ -1,0 +1,335 @@
+:root {
+  --bg: #f3efe8;
+  --surface: #fbf8f3;
+  --surface-strong: #fffdf9;
+  --surface-soft: #f7f2eb;
+  --text: #2c2926;
+  --text-secondary: #6f685f;
+  --line: #ded6cc;
+  --line-strong: #d2c7bb;
+  --accent: #d9784f;
+  --accent-soft: #f3e1d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.list-page,
+.detail-page {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 목록 페이지 */
+.list-page {
+  padding-top: 56px;
+  padding-bottom: 80px;
+}
+
+.page-title {
+  margin: 0 0 28px;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.slide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.slide-link {
+  display: block;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.slide-link:hover {
+  background: var(--surface-strong);
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+
+/* 상세 페이지 */
+.detail-page {
+  padding-top: 28px;
+  padding-bottom: 100px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.back-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+.slide-position {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: -0.02em;
+}
+
+.slide-image-section {
+  margin-bottom: 20px;
+}
+
+.slide-image {
+  width: 100%;
+  display: block;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+
+/* 내용 박스 */
+.content-block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+/* 핵심 용어 */
+.terms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.term-item {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--surface-soft);
+  border: 1px solid #eee5db;
+}
+
+.term-english {
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.term-korean {
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+/* 설명 */
+.explanation {
+  font-size: 17px;
+  line-height: 1.9;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.empty-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* 이전 / 다음 버튼 */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.nav-button {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.nav-button:hover {
+  background: var(--surface-strong);
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+
+.nav-button.disabled {
+  color: #b6aea5;
+  background: #eee7de;
+  border-color: #e2d8cd;
+  pointer-events: none;
+}
+
+/* 아주 은은한 포인트 */
+.page-title::before {
+  content: "✳";
+  color: var(--accent);
+  font-size: 0.8em;
+  margin-right: 10px;
+  vertical-align: 1px;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .list-page {
+    padding-top: 36px;
+    padding-bottom: 56px;
+  }
+
+  .detail-page {
+    padding-top: 20px;
+    padding-bottom: 72px;
+  }
+
+  .page-title {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .slide-link {
+    padding: 18px 18px;
+    border-radius: 18px;
+    font-size: 18px;
+  }
+
+  .top-bar {
+    margin-bottom: 14px;
+  }
+
+  .slide-position {
+    font-size: 15px;
+  }
+
+  .slide-image {
+    border-radius: 22px;
+  }
+
+  .content-block {
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-size: 21px;
+    margin-bottom: 14px;
+  }
+
+  .term-item {
+    padding: 14px 15px;
+    border-radius: 16px;
+  }
+
+  .term-english {
+    font-size: 16px;
+  }
+
+  .term-korean {
+    font-size: 14px;
+  }
+
+  .explanation {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .nav-buttons {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .nav-button {
+    min-height: 54px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-page,
+  .detail-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .slide-link {
+    font-size: 17px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .explanation {
+    font-size: 15.5px;
+    line-height: 1.82;
+  }
+}
