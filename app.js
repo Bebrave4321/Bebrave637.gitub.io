@@ -13,7 +13,7 @@ async function loadSlideList() {
     const slideNumber = index + 1;
 
     const link = document.createElement("a");
-    link.href = `/viewer.html?index=${index}`;
+    link.href = `viewer.html?index=${index}`;
     link.className = "slide-link";
     link.textContent = `slide${slideNumber}`;
 
@@ -32,7 +32,7 @@ async function loadSlideDetail() {
 
   if (isNaN(index) || index < 0 || index >= data.length) {
     alert("잘못된 슬라이드 접근입니다.");
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -78,7 +78,7 @@ async function loadSlideDetail() {
   explanation.textContent = result.explanation;
 
   if (index > 0) {
-    prevButton.href = `/viewer.html?index=${index - 1}`;
+    prevButton.href = `viewer.html?index=${index - 1}`;
     prevButton.classList.remove("disabled");
   } else {
     prevButton.removeAttribute("href");
@@ -86,7 +86,7 @@ async function loadSlideDetail() {
   }
 
   if (index < data.length - 1) {
-    nextButton.href = `/viewer.html?index=${index + 1}`;
+    nextButton.href = `viewer.html?index=${index + 1}`;
     nextButton.classList.remove("disabled");
   } else {
     nextButton.removeAttribute("href");
